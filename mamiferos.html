@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ABM Mamiferos</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="js/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="js/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
+    <link href="js/bootstrap/css/bootstrapValidator.min.css" rel="stylesheet" type="text/css" />
+    <link href="js/DataTables/datatables.min.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <!-- Barra de Navegacion  -->
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                <a class="navbar-brand" href="index.html">Menu Principal</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="mamiferos.html">Mamiferos</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Cuerpo -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8">
+                <!-- Titulo -->
+                <div class="page-header">
+                    <h1>Sistema de Administracion de Animales Mamiferos</h1>
+                </div>
+                <!-- Tabla -->
+                <table class="table" id="tablaMamiferos">
+                    <thead>
+                        <tr>
+                            <th>Nombre Cientifico</th>
+                            <th>Nombre Comun</th>
+                            <th>Clasificacion</th>
+                            <th>Raza</th>
+                            <th>Sexo</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cuerpoTabla">
+                    </tbody>
+                </table><br>
+                <!-- Botones -->
+                <table class="table">
+                    <tr>
+                        <td align="center">
+                            <button class="btn btn-primary btn-lg" id="agregarMamiferos">Agregar</button>
+                        </td>
+                        <td align=" center "></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-lg-2 "></div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade " id="modalMamiferos " tabindex="-1 " role="dialog " aria-labelledby="myModalLabel " aria-hidden="true ">
+        <div class="modal-dialog ">
+            <div class="modal-content ">
+                <form id="formMamiferos " class="form-horizontal " data-bv-message="Este valor No es válido " data-bv-feedbackicons-valid="glyphicon glyphicon-ok " data-bv-feedbackicons-invalid="glyphicon glyphicon-remove
+                                " data-bv-feedbackicons-validating="glyphicon glyphicon-refresh " data-bv-submitbuttons='button[type="submit "]' data-bv-trigger="focus blur " data-bv-live="enabled ">
+                    <!-- Titulo Modal -->
+                    <div class="modal-header ">
+                        <button type="button " class="close " data-dismiss="modal " aria-hidden="true ">&times;</button>
+                        <h4 class="modal-title " id="tituloModal ">Nuevo Mamifero</h4>
+                    </div>
+                    <div class="modal-body ">
+                        <!-- ID -->
+                        <div class="form-group ">
+                            <input class="form-control " type="hidden " id="id " name="id ">
+                        </div>
+                        <!-- Nombre Cientifico -->
+                        <div class="form-group ">
+                            <label class='col-lg-2'>NombreCientifico</label>
+                            <div class='col-lg-10'>
+                                <input class="form-control " type="text " id="nombreCientifico " name="nombreCientifico " data-bv-notempty="true " data-bv-notempty-message="Debes completar el Nombre Cientifico ">
+                            </div>
+                        </div>
+                        <!-- Nombre Comun -->
+                        <div class="form-group ">
+                            <label class='col-lg-2'>NombreComun</label>
+                            <div class='col-lg-10'>
+                                <input class="form-control " type="text " id="nombreComun " name="nombreComun " data-bv-notempty="true " data-bv-notempty-message="Debes completar el Nombre Comun ">
+                            </div>
+                        </div>
+                        <!-- Clasificacion -->
+                        <div class="form-group ">
+                            <label class='col-lg-2'>Clasificacion</label>
+                            <div class='col-lg-10'>
+                                <input class="form-control " type="text " id="clasificacion " name="clasificacion " data-bv-notempty="true " data-bv-notempty-message="Debes completar la Clasificacion ">
+                            </div>
+                        </div>
+                        <!-- Raza -->
+                        <div class="form-group ">
+                            <label class='col-lg-2'>Raza</label>
+                            <div class='col-lg-10'>
+                                <input class="form-control " type="text " id="raza " name="raza " data-bv-notempty="true " data-bv-notempty-message="Debes completar la Raza ">
+                            </div>
+                        </div>
+                        <!-- Sexo -->
+                        <div class="form-group ">
+                            <label class='col-lg-2'>Sexo</label>
+                            <div class='col-lg-10'>
+                                <input class="form-control " type="text " id="sexo " name="sexo " data-bv-notempty="true " data-bv-notempty-message="Debes completar el Numero de Calle ">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Botones Modal -->
+                    <div class="modal-footer ">
+                        <button type="button " class="btn btn-default " data-dismiss="modal ">Cerrar</button>
+                        <button type="button " id="guardar " class="btn btn-primary ">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Librerias -->
+    <script src="js/jquery/jquery-3.2.1.min.js " type="text/javascript "></script>
+    <script src="js/bootstrap/js/bootstrap.min.js " type="text/javascript "></script>
+    <script src="js/bootstrap/js/bootstrapValidator.min.js " type="text/javascript "></script>
+    <script src="js/DataTables/datatables.min.js " type="text/javascript "></script>
+    <script src="js/funcionesGeneral.js " type="text/javascript "></script>
+    <script src="js/funcionesMamiferos.js " type="text/javascript "></script>
+</body>
+
+</html>
