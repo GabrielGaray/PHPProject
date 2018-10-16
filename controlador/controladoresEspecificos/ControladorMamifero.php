@@ -13,13 +13,13 @@ class ControladorMamifero extends ControladorGeneral {
 
             //Se agrega el mamifero
             $parametros = array("nombreCientifico" => $datos['nombreCientifico'], "nombreComun" => $datos['nombreComun'], "raza" => $datos['raza'], "sexo" => $datos['sexo']);
-            $resultado = $this->refControladorPersistencia->ejecutarSentencia(DbSentencias::INSERTAR_MAMIFERO, $parametros);
+            $resultado = $this->refControladorPersistencia->ejecutarSentencia(DbSentencias::INSERTAR_MAMIFERO, $parametros); //ingreso a funciones o parámetros estáticos
             $this->refControladorPersistencia->confirmarTransaccion();
             
             //Se devuelve el mamifero recien agregado
             return $this->buscarUltimoMamifero();
         } catch (Exception $e) {
-            $this->refControladorPersistencia->rollBackTransaccion();
+            $this->refControladorPersistencia->rollBackTransaccion();//estado previo
             echo "Failed: " . $e->getMessage();
         }
     }
