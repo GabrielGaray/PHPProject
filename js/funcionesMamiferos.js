@@ -3,8 +3,8 @@ $(function() {
     (function(app) {
         app.init = function() {
             compartirFunciones(app);
-            app.cargarDataTable("Mamiferos");
-            app.oyentes("Mamiferos");
+            app.cargarDataTable("Mamifero");
+            app.oyentes("Mamifero");
         };
         app.init();
     })(funcionesMamiferos);

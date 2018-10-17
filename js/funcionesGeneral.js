@@ -1,24 +1,23 @@
-function compartirFuncion(app) {
+function compartirFunciones(app) {
     app.cargarDataTable = function(tipo) {
-        var url = "controlador/ruteador/Ruteador.php?accion=listar&Formulario=";
-        if (tipo == "Mamiferos") {
+        var url = "controlador/ruteador/Ruteador.php?accion=listar&Formulario=" + tipo;
+        if (tipo == "Mamifero") {
             $("#tabla" + tipo).DataTable({
-                "language": {
+                "language": {//configura idioma
                     "url": "js/DataTables/Spanish.json"
                 },
                 "autoWidth": false,
-                "ajax": {
+                "ajax": {//configura los parametros para la llamada ajax
                     "url": url,
                     "dataSrc": ""
                 },
-                "columns": [
+                "columns": [//configura la tabla
                     { "data": "nombreCientifico" },
                     { "data": "nombreComun" },
                     { "data": "clasificacion" },
                     { "data": "raza" },
                     { "data": "sexo" },
-                    {
-                        "data": "Acciones",
+                    { "data": "Acciones",
                         "orderable": false,
                         "searchable": false,
                         "render": function(data, type, row, meta) {
@@ -32,11 +31,11 @@ function compartirFuncion(app) {
     };
     app.oyentes = function(tipo) {
         $("#agregar" + tipo).on('click', function(event) {
-            app.modalAgregar();
+            app.modalAgregar(tipo);
         });
 
         $("cuerpoTabla").on('click', function(event) {
-            app.eliminarAnimal(tipo, $(this).attr("data-id_animal")); //duda o verificr id
+            app.eliminarAnimal(tipo, $(this).attr("data-id_animal")); //attr
         });
 
         $("#guardar").on("click", function(event) {
@@ -53,7 +52,7 @@ function compartirFuncion(app) {
 
     };
     app.modalAgregar = function(tipo) {
-        app.limpiarModal(tipo);
+        app.limpiarModal();
         $("#tituloModal").html("Nuevo" + tipo);
         $("#modal" + tipo).modal({ show: true });
         //ver diferencia con modificar
@@ -68,7 +67,7 @@ function compartirFuncion(app) {
                 url: url,
                 method: "POST",
                 data: datosEnviar,
-                success: function(datosRecibidos) {
+                success: function(datosRecibidos) { //datosRecibidos no se usa?
                     alert('El registro se elimino exitosamente');
                     app.actualizarDataTable();
                 },
@@ -100,7 +99,7 @@ function compartirFuncion(app) {
             data: datosEnviar,
             success: function(datosRecibidos) {
                 $("#modal" + tipo).modal('hide');
-                app.limpiarModal(tipo);
+                app.limpiarModal();
                 app.actualizarDataTable(tipo);
             },
             error: function(datosRecibidos) {

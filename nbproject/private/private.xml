@@ -3,8 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/PhpProjectAnimal2/js/funcionesAnimal.js</file>
-            <file>file:/C:/xampp/htdocs/PhpProjectAnimal2/js/funcionesGeneral.js</file>
+            <file>file:/home/zenack/Documentos/PHPProject/controlador/persistencia/ControladorPersistencia.php</file>
+            <file>file:/home/zenack/Documentos/PHPProject/js/funcionesGeneral.js</file>
+            <file>file:/home/zenack/Documentos/PHPProject/controlador/ruteador/Ruteador.php</file>
+            <file>file:/home/zenack/Documentos/PHPProject/controlador/persistencia/DbSentencias.php</file>
+            <file>file:/home/zenack/Documentos/PHPProject/controlador/persistencia/ConexionDB.php</file>
+            <file>file:/home/zenack/Documentos/PHPProject/js/funcionesMamiferos.js</file>
+            <file>file:/home/zenack/Documentos/PHPProject/controlador/controladoresEspecificos/ControladorGeneral.php</file>
+            <file>file:/home/zenack/Documentos/PHPProject/js/DataTables/Spanish.json</file>
+            <file>file:/home/zenack/Documentos/PHPProject/controlador/controladoresEspecificos/ControladorMamifero.php</file>
         </group>
     </open-files>
 </project-private>

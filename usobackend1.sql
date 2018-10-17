@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 10-10-2018 a las 23:05:38
+-- Tiempo de generación: 17-10-2018 a las 22:20:47
 -- Versión del servidor: 10.1.36-MariaDB
 -- Versión de PHP: 7.2.10
 
@@ -38,6 +38,14 @@ CREATE TABLE `animal` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Volcado de datos para la tabla `animal`
+--
+
+INSERT INTO `animal` (`id_animal`, `nombreCientifico`, `nombreComun`, `clasificacion`, `raza`, `sexo`) VALUES
+(1, 'Panthera leo', 'Leonardo', 'Mamifero', 'Massaica', 'Masculino'),
+(2, 'Panthera tigris', 'Rosa', 'Mamifero', 'Siberiano', 'Femenino');
+
+--
 -- Índices para tablas volcadas
 --
 
@@ -55,7 +63,7 @@ ALTER TABLE `animal`
 -- AUTO_INCREMENT de la tabla `animal`
 --
 ALTER TABLE `animal`
-  MODIFY `id_animal` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_animal` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

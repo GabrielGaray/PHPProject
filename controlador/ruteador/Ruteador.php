@@ -1,11 +1,5 @@
 <?php
-require_once '../controladoresEspecificos/ControladorSesion.php';
-
-$sesion = new ControladorSesion();
-
-//Se verifica que la sesion este iniciada
-if ($sesion->verificar()) {
-    
+require_once '../controladoresEspecificos/*';
     //Si se envio un formulario
     if (isset($_GET['Formulario'])) {
         $formulario = $_GET['Formulario'];
@@ -27,7 +21,5 @@ if ($sesion->verificar()) {
     } else {
         echo json_encode(true);
     }
-} else {
-    echo json_encode(false);
-}
+
 
