@@ -66,66 +66,72 @@
                     </tr>
                 </table>
             </div>
-            <div class="col-lg-2 "></div>
+            <div class="col-lg-2"></div>
         </div>
     </div>
 
     <!-- Modal -->
-    <div class="modal fade " id="modalMamifero " tabindex="-1 " role="dialog " aria-labelledby="myModalLabel " aria-hidden="true ">
-        <div class="modal-dialog ">
-            <div class="modal-content ">
-                <form id="formMamifero " class="form-horizontal " data-bv-message="Este valor No es válido " data-bv-feedbackicons-valid="glyphicon glyphicon-ok " data-bv-feedbackicons-invalid="glyphicon glyphicon-remove
-                                " data-bv-feedbackicons-validating="glyphicon glyphicon-refresh " data-bv-submitbuttons='button[type="submit "]' data-bv-trigger="focus blur " data-bv-live="enabled ">
+    <div class="modal fade" id="modalMamifero" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true ">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form id="formMamifero" class="form-horizontal" 
+                data-bv-message="Este valor No es válido" 
+                data-bv-feedbackicons-valid="glyphicon glyphicon-ok" 
+                data-bv-feedbackicons-invalid="glyphicon glyphicon-remove" 
+                data-bv-feedbackicons-validating="glyphicon glyphicon-refresh" 
+                data-bv-submitbuttons='button[type="submit"]' 
+                data-bv-trigger="focus blur"
+                data-bv-live="enabled">
                     <!-- Titulo Modal -->
-                    <div class="modal-header ">
-                        <button type="button " class="close " data-dismiss="modal " aria-hidden="true ">&times;</button>
-                        <h4 class="modal-title " id="tituloModal ">Nuevo Mamifero</h4>
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="tituloModal">Nuevo Mamifero</h4>
                     </div>
-                    <div class="modal-body ">
+                    <div class="modal-body">
                         <!-- ID -->
-                        <div class="form-group ">
-                            <input class="form-control " type="hidden " id="id " name="id ">
+                        <div class="form-group">
+                            <input class="form-control" type="hidden" id="id" name="id">
                         </div>
                         <!-- Nombre Cientifico -->
-                        <div class="form-group ">
+                        <div class="form-group">
                             <label class='col-lg-2'>NombreCientifico</label>
                             <div class='col-lg-10'>
-                                <input class="form-control " type="text " id="nombreCientifico " name="nombreCientifico " data-bv-notempty="true " data-bv-notempty-message="Debes completar el Nombre Cientifico ">
+                                <input class="form-control" type="text" id="nombreCientifico" name="nombreCientifico" data-bv-notempty="true" data-bv-notempty-message="Debes completar el Nombre Cientifico">
                             </div>
                         </div>
                         <!-- Nombre Comun -->
-                        <div class="form-group ">
+                        <div class="form-group">
                             <label class='col-lg-2'>NombreComun</label>
                             <div class='col-lg-10'>
-                                <input class="form-control " type="text " id="nombreComun " name="nombreComun " data-bv-notempty="true " data-bv-notempty-message="Debes completar el Nombre Comun ">
+                                <input class="form-control" type="text" id="nombreComun" name="nombreComun" data-bv-notempty="true" data-bv-notempty-message="Debes completar el Nombre Comun">
                             </div>
                         </div>
                         <!-- Clasificacion -->
-                        <div class="form-group ">
+                        <div class="form-group">
                             <label class='col-lg-2'>Clasificacion</label>
                             <div class='col-lg-10'>
-                                <input class="form-control " type="text " id="clasificacion " name="clasificacion " data-bv-notempty="true " data-bv-notempty-message="Debes completar la Clasificacion ">
+                                <input class="form-control" type="text" id="clasificacion" name="clasificacion" data-bv-notempty="true" data-bv-notempty-message="Debes completar la Clasificacion">
                             </div>
                         </div>
                         <!-- Raza -->
-                        <div class="form-group ">
+                        <div class="form-group">
                             <label class='col-lg-2'>Raza</label>
                             <div class='col-lg-10'>
-                                <input class="form-control " type="text " id="raza " name="raza " data-bv-notempty="true " data-bv-notempty-message="Debes completar la Raza ">
+                                <input class="form-control" type="text" id="raza" name="raza" data-bv-notempty="true" data-bv-notempty-message="Debes completar la Raza">
                             </div>
                         </div>
                         <!-- Sexo -->
-                        <div class="form-group ">
+                        <div class="form-group">
                             <label class='col-lg-2'>Sexo</label>
                             <div class='col-lg-10'>
-                                <input class="form-control " type="text " id="sexo " name="sexo " data-bv-notempty="true " data-bv-notempty-message="Debes completar el Numero de Calle ">
+                                <input class="form-control" type="text" id="sexo" name="sexo" data-bv-notempty="true" data-bv-notempty-message="Debes completar el Numero de Calle">
                             </div>
                         </div>
                     </div>
                     <!-- Botones Modal -->
-                    <div class="modal-footer ">
-                        <button type="button " class="btn btn-default " data-dismiss="modal ">Cerrar</button>
-                        <button type="button " id="guardar " class="btn btn-primary ">Guardar</button>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                        <button type="button" id="guardar" class="btn btn-primary">Guardar</button>
                     </div>
                 </form>
             </div>
@@ -133,12 +139,12 @@
     </div>
 
     <!-- Librerias -->
-    <script src="js/jquery/jquery-3.2.1.min.js " type="text/javascript "></script>
-    <script src="js/bootstrap/js/bootstrap.min.js " type="text/javascript "></script>
-    <script src="js/bootstrap/js/bootstrapValidator.min.js " type="text/javascript "></script>
-    <script src="js/DataTables/datatables.min.js " type="text/javascript "></script>
-    <script src="js/funcionesGeneral.js " type="text/javascript "></script>
-    <script src="js/funcionesMamiferos.js " type="text/javascript "></script>
+    <script src="js/jquery/jquery-3.2.1.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap/js/bootstrapValidator.min.js" type="text/javascript"></script>
+    <script src="js/DataTables/datatables.min.js" type="text/javascript"></script>
+    <script src="js/funcionesGeneral.js" type="text/javascript"></script>
+    <script src="js/funcionesMamiferos.js" type="text/javascript"></script>
 </body>
 
 </html>

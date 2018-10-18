@@ -31,11 +31,10 @@ function compartirFunciones(app) {
     };
     app.oyentes = function(tipo) {
         $("#agregar" + tipo).on('click', function(event) {
-            console.log('clik')
             app.modalAgregar(tipo);
         });
 
-        $("cuerpoTabla").on('click','.eliminar', function() {
+        $("#cuerpoTabla").on('click','.eliminar', function() {
             app.eliminarAnimal(tipo, $(this).attr("data-id_animal")); //attr
         });
 
@@ -54,16 +53,14 @@ function compartirFunciones(app) {
     };
     app.modalAgregar = function(tipo) {
         app.limpiarModal();
-        $("#tituloModal").html("Nuevo" + tipo);
+        $("#tituloModal").html("Nuevo " + tipo);
         $("#modal" + tipo).modal({ show: true });
-        console.log('despues de modalMamifero');
+        console.log('modalAgregar');
         //ver diferencia con modificar
-
-
     };
     app.eliminarAnimal = function(tipo, id) {
         console.log('eliminar');
-        if (confirm("Estas Seguro de Eliminar el siguiente Animal")) {
+        if (confirm("¿Estas Seguro de Eliminar el siguiente Animal?")) {
             var url = "controlador/ruteador/Ruteador.php?accion=eliminar$Formulario" + tipo;
             var datosEnviar = { id: id };
             $.ajax({
@@ -82,11 +79,13 @@ function compartirFunciones(app) {
         }
     }
     app.limpiarModal = function() {
+        $("#id").val(0);
         $("#nombreCientifico").val('');
         $("#nombreComun").val('');
         $("#clasificacion").val('');
         $("#raza").val('');
         $("#sexo").val('');
+        console.log('limpiarModal');
     };
     app.actualizarDataTable = function(tipo) {
         var tabla = $("tabla" + tipo).DataTable();
