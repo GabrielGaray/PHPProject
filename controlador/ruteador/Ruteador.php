@@ -1,5 +1,5 @@
 <?php
-require_once '../controladoresEspecificos/*';
+require_once '../controladoresEspecificos/ControladorMamifero.php';
     //Si se envio un formulario
     if (isset($_GET['Formulario'])) {
         $formulario = $_GET['Formulario'];

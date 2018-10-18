@@ -31,10 +31,11 @@ function compartirFunciones(app) {
     };
     app.oyentes = function(tipo) {
         $("#agregar" + tipo).on('click', function(event) {
+            console.log('clik')
             app.modalAgregar(tipo);
         });
 
-        $("cuerpoTabla").on('click', function(event) {
+        $("cuerpoTabla").on('click','.eliminar', function() {
             app.eliminarAnimal(tipo, $(this).attr("data-id_animal")); //attr
         });
 
@@ -55,11 +56,13 @@ function compartirFunciones(app) {
         app.limpiarModal();
         $("#tituloModal").html("Nuevo" + tipo);
         $("#modal" + tipo).modal({ show: true });
+        console.log('despues de modalMamifero');
         //ver diferencia con modificar
 
 
     };
     app.eliminarAnimal = function(tipo, id) {
+        console.log('eliminar');
         if (confirm("Estas Seguro de Eliminar el siguiente Animal")) {
             var url = "controlador/ruteador/Ruteador.php?accion=eliminar$Formulario" + tipo;
             var datosEnviar = { id: id };
@@ -79,7 +82,7 @@ function compartirFunciones(app) {
         }
     }
     app.limpiarModal = function() {
-        $("#nombreCientifico").val(0);
+        $("#nombreCientifico").val('');
         $("#nombreComun").val('');
         $("#clasificacion").val('');
         $("#raza").val('');
