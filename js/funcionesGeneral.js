@@ -61,7 +61,7 @@ function compartirFunciones(app) {
     app.eliminarAnimal = function(tipo, id) {
         console.log('eliminar');
         if (confirm("¿Estas Seguro de Eliminar el siguiente Animal?")) {
-            var url = "controlador/ruteador/Ruteador.php?accion=eliminar$Formulario" + tipo;
+            var url = "controlador/ruteador/Ruteador.php?accion=eliminar&Formulario=" + tipo;
             var datosEnviar = { id: id };
             $.ajax({
                 url: url,
@@ -69,7 +69,7 @@ function compartirFunciones(app) {
                 data: datosEnviar,
                 success: function(datosRecibidos) { //datosRecibidos no se usa?
                     alert('El registro se elimino exitosamente');
-                    app.actualizarDataTable();
+                    app.actualizarDataTable(tipo);
                 },
                 error: function(datosRecibidos) {
                     alert('Hubo un error al eliminar el registro');
@@ -90,9 +90,10 @@ function compartirFunciones(app) {
     app.actualizarDataTable = function(tipo) {
         var tabla = $("tabla" + tipo).DataTable();
         tabla.ajax.reload();
+        console.log('funciona');
     }
     app.guardarAnimal = function(tipo) {
-        var url = "controlador/ruteador/Ruteador.php?accion=agregar&Formulario" + tipo;
+        var url = "controlador/ruteador/Ruteador.php?accion=agregar&Formulario=" + tipo;
         var datosEnviar = $("#form" + tipo).serialize();
         $.ajax({
             url: url,
